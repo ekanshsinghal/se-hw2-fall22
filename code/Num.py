@@ -20,7 +20,7 @@ class Num:
 		self.n = 0
 		self.at = c if c else 0
 		self.name = s if s else ""
-		self._has = OrderedDict()
+		self._has = []
 		self.lo=inf
 		self.hi=-inf
 		self.isSorted=True
@@ -29,7 +29,7 @@ class Num:
 
 	def nums(self):
 		if not self.isSorted:
-			self._has = OrderedDict(sorted(self._has.items()))
+			self._has.sort()
 			self.isSorted = True
 		return self._has
 
@@ -44,7 +44,7 @@ class Num:
 				pos = random(len(self._has))
 			if pos:
 				self.isSorted = False
-				self._has[pos] = float(v)
+				self._has[pos] = int(v)
 	
 	def mid(self):
 		return per(self.nums(), 0.5)
