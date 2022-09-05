@@ -9,6 +9,11 @@ def per(t, p = None):
 	p = floor(((p if p else 0.5) * len(t)) + 0.5)
 	return t[max(1, min(len(t), p))]
 
+# def cli(the):
+# 	for key, val in the.items():
+# 		val = str(val)
+# 		for n, x in 
+
 
 class Num:
 	def __init__(self, c=None, s=None):
@@ -19,14 +24,14 @@ class Num:
 		self.lo=inf
 		self.hi=-inf
 		self.isSorted=True
-		self.w= -1 if (s if s else '').endswith('-') else 1
+		s=s if s else ''
+		self.w= -1 if s.endswith('-') else 1
 
 	def nums(self):
 		if not self.isSorted:
 			self._has = OrderedDict(sorted(self._has.items()))
 			self.isSorted = True
 		return self._has
-
 
 	def add(self, v = None, pos = None):
 		if v != '?':
@@ -49,7 +54,12 @@ class Num:
 		return (per(a, 0.9) - per(a, 0.1)) / 2.58
 
 
-	def test_Num():
-		pass
+def test_Num():
+	num = Num()
+	for i in range(1, 101):
+		num.add(i)
+	mid, div = num.mid(), num.div()
+	print(mid, div)
+	return 50 <= mid and min <= 51 and 30.5 < div and div < 32
 
-	test_Num()
+test_Num()
