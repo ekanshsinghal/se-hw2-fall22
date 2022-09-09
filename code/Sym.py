@@ -54,4 +54,4 @@ def test_Sym():
 	oo({"mid":mode, "div":entropy})
 	print(mode, entropy)
 
-test_Sym()
+# test_Sym()
