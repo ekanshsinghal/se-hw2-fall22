@@ -37,7 +37,7 @@ class Num:
 
 	def add(self, v = None, pos = None):
 		if v != '?':
-			self.n += 1
+			self.n = self.n + 1
 			self.lo = min(v, self.lo)
 			self.hi = max(v, self.hi)
 			if len(self._has) < the['nums']:
@@ -60,22 +60,22 @@ def cli(t):
 		v = str(v)
 		# Implement other modules to finish this.
 
-# def o(t, show=None, u=None):
-# 	if not isinstance(t, dict):
-# 		return str(t)
-# 	def show(k, v):
-# 		if not str(k).find("\0"):
-# 			v = o(v)
-# 			return len(t)==0 and (":"+k+" "+v) or str(v)
-# 	u = {}
-# 	for k, v in t.items():
-# 		u[1+len(u)] = show(k,v)
-# 	if len(t) == 0:
-# 		u.sort()
-# 	return u
+def o(t, show=None, u=None):
+	if not isinstance(t, dict):
+		return str(t)
+	def show(k, v):
+		if not str(k).find("\0"):
+			v = o(v)
+			return len(t)==0 and (":"+k+" "+v) or str(v)
+	u = {}
+	for k, v in t.items():
+		u[1+len(u)] = show(k,v)
+	if len(t) == 0:
+		u.sort()
+	return u
 
-# def oo(t):
-# 	print(o(t))
+def oo(t):
+	print(o(t))
 
 # def test_Num():
 # 	num = Num()
