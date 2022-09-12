@@ -45,13 +45,13 @@ def oo(t):
 	print(o(t))
 	return t
 
-def test_Sym():
-	sym = Sym()
-	for _, x in enumerate(["a","a","a","a","b","b","c"]):
-		sym.add(x)
-	mode, entropy = sym.mid(), sym.div()
-	entropy = (1000*entropy)//1/1000
-	oo({"mid":mode, "div":entropy})
-	print(mode, entropy)
+# def test_Sym():
+# 	sym = Sym()
+# 	for _, x in enumerate(["a","a","a","a","b","b","c"]):
+# 		sym.add(x)
+# 	mode, entropy = sym.mid(), sym.div()
+# 	entropy = (1000*entropy)//1/1000
+# 	oo({"mid":mode, "div":entropy})
+# 	print(mode, entropy)
 
 # test_Sym()

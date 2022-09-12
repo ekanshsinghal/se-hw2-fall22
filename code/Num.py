@@ -3,7 +3,7 @@ from math import floor
 from collections import OrderedDict
 from random import random
 
-from Sym import o, oo
+# from Sym import o, oo
 
 the = {}
 
@@ -77,27 +77,27 @@ def cli(t):
 # def oo(t):
 # 	print(o(t))
 
-def test_Num():
-	num = Num()
-	for i in range(1, 101):
-		num.add(i)
-	mid, div = num.mid(), num.div()
-	print(mid, div)
-	return 50 <= mid and min <= 51 and 30.5 < div and div < 32
+# def test_Num():
+# 	num = Num()
+# 	for i in range(1, 101):
+# 		num.add(i)
+# 	mid, div = num.mid(), num.div()
+# 	print(mid, div)
+# 	return 50 <= mid and min <= 51 and 30.5 < div and div < 32
 
-def test_bignum(num=None):
-	num = Num()
-	the["nums"] = 32
+# def test_bignum(num=None):
+# 	num = Num()
+# 	the["nums"] = 32
 
-	for i in range(1,1000):
-		num.add(i)
+# 	for i in range(1,1000):
+# 		num.add(i)
 	
-	# Implement oo(num.nums())
+# 	# Implement oo(num.nums())
 
-	return 32 == len(num._has)
+# 	return 32 == len(num._has)
 
-def test_the():
-	return oo(the)
+# def test_the():
+# 	return oo(the)
 
 # test_bignum()
 # test_Num()
