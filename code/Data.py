@@ -34,3 +34,26 @@ class Data:
             t[col.name] = v
 
         return t
+
+def coerce(s, fun):
+    def fun(s1):
+        if s1 == "true":
+            return True
+        elif s1 == "false":
+            return False
+        return s1
+    return int(s) or float(s) or fun(s.find("^%s*(.−)%s*$"))
+
+def csv(fname, fun, sep, src, s, t):
+    sep = "([^" + the[sep] + "]+)"
+    src = io.input(fname)
+
+    while True:
+        s = io.read()
+        if not s:
+            return io.close(src)
+        else:
+            t = {}
+            for s1 in s.find(sep):
+                t[1+len(t)] = coerce(s1)
+            fun(t)
