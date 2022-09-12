@@ -8,7 +8,7 @@ class Data:
         self.cols = None
         self.rows = {}
         if isinstance(src, "str"):
-            csv(src, self.add(rows)) # Check row
+            csv(src, self.add(Row)) # Check row
         else:
             for _, row in src.items():
                 self.add(row)
