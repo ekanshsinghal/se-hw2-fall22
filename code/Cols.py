@@ -1,7 +1,7 @@
 import re
 
-import Num
-import Sym
+import code.Num
+import code.Sym
 
 
 def push(t, x):

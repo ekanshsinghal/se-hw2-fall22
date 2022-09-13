@@ -1,21 +1,23 @@
-import Row
-import Cols
-from Sym import the
+import code.Row
+import code.Cols
+# from code.Sym import the
 import io
 
 class Data:
-    def __init__(self, src=None):
+    def __init__(self, src):
         self.cols = None
         self.rows = {}
-        if isinstance(src, "str"):
-            csv(src, self.add(Row)) # Check row
+        if isinstance(src, str):
+            def add_rows(row):
+                self.add(row)
+            csv(src, add_rows) # Check row
         else:
             for _, row in src.items():
                 self.add(row)
 
     def add(self, xs=None, row=None):
         if not self.cols:
-            self.cols = Cols(xs)
+            self.cols = code.Cols.Cols(xs)
         else:
             row = self.rows.append(xs.cells and xs or Row(xs))
             for _, todo in enumerate([self.cols.x, self.cols.y]):
@@ -30,30 +32,42 @@ class Data:
 
         for _, col in showCols.items():
             v = fun(col)
-            v = isinstance(v, "int") and round(v, places) or v
+            v = isinstance(v, int) and round(v, places) or v
             t[col.name] = v
 
         return t
 
-def coerce(s, fun):
+def coerce(s):
     def fun(s1):
         if s1 == "true":
             return True
         elif s1 == "false":
             return False
         return s1
-    return int(s) or float(s) or fun(s.find("^%s*(.−)%s*$"))
+    try:
+        return int(s)
+    except:
+        try:
+            return float(s)
+        except:
+            return fun(s.find("^%s*(.−)%s*$"))
+    # return int(s) or float(s) or fun(s.find("^%s*(.−)%s*$"))
 
-def csv(fname, fun, sep, src, s, t):
-    sep = "([^" + the[sep] + "]+)"
-    src = io.input(fname)
-
+def csv(fname, fun, sep=None):
+    # if sep:
+    #     sep = "([^" + the[sep] + "]+)"
+    # else:
+    #     sep = "([^,]+)"
+    src = open(fname,"r")
+    columns = src.readline()
     while True:
-        s = io.read()
+        s = src.readline()
         if not s:
-            return io.close(src)
+            src.close()
+            break
         else:
             t = {}
-            for s1 in s.find(sep):
+            s_list=s.split(",")
+            for s1 in s_list:
                 t[1+len(t)] = coerce(s1)
             fun(t)
