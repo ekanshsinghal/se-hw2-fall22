@@ -1,4 +1,4 @@
-import code.Row
+import code.Row as Row
 import code.Cols
 # from code.Sym import the
 import io

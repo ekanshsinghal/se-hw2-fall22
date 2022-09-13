@@ -7,4 +7,4 @@
 
 ## About the project
 
-This project pyhon implementation of a lua script. 
+This project is python implementation of a lua script. 
