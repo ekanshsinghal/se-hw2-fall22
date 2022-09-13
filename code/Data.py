@@ -2,6 +2,7 @@ import code.Row as Row
 import code.Cols as Cols
 # from code.Sym import the
 import io
+import math
 
 def push(t, x):
 	t[1 + len(t)] = x
