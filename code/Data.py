@@ -3,6 +3,10 @@ import code.Cols
 # from code.Sym import the
 import io
 
+def push(t, x):
+	t[1 + len(t)] = x
+	return x
+
 class Data:
     def __init__(self, src):
         self.cols = None
