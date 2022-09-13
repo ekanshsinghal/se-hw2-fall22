@@ -1,11 +1,15 @@
 import code.Row as Row
-import code.Cols
+import code.Cols as Cols
 # from code.Sym import the
 import io
 
 def push(t, x):
 	t[1 + len(t)] = x
 	return x
+
+def rnd(x, places=3):
+    mult = pow(10, places)
+    return math.floor(x * mult + 0.5) / mult
 
 class Data:
     def __init__(self, src):
