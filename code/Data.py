@@ -1,8 +1,10 @@
 import code.Row as Row
 import code.Cols as Cols
+from code.Num import Num, the
 # from code.Sym import the
 import io
 import math
+import os
 
 def push(t, x):
 	t[1 + len(t)] = x
@@ -62,12 +64,11 @@ def coerce(s):
             return fun(s.find("^%s*(.−)%s*$"))
     # return int(s) or float(s) or fun(s.find("^%s*(.−)%s*$"))
 
-def csv(fname, fun, sep=None):
-    # if sep:
-    #     sep = "([^" + the[sep] + "]+)"
-    # else:
-    #     sep = "([^,]+)"
+def csv(fname, fun, sep=None, src=None, s=None, t=None):
+    # sep = "([^" + the["Seperator"] + "]+)"
+    sep = "([^" + "]+)"
     src = open(fname,"r")
+    path = os.path.join(os.path.dirname(__file__), fname)
     columns = src.readline()
     while True:
         s = src.readline()

@@ -1,7 +1,7 @@
 import pytest
 from code.Sym import Sym, oo
 from code.Num import Num, the
-import code.Data
+from code.Data import Data, csv
 
 def test_Sym():
     sym = Sym()
@@ -15,10 +15,10 @@ def test_Sym():
 def test_csv():
     def row_function(row):
         print(row)
-    code.Data.csv("data/hw2-csv.csv",row_function)
+    csv("data/hw2-csv.csv",row_function)
 
 def test_data():
-    d = code.Data.Data("data/hw2-csv.csv")
+    d = Data("data/hw2-csv.csv")
     for _,i in d.cols.y.items():
         print(i)
 
@@ -38,7 +38,7 @@ def o(t, show=None, u=None):
 	return u
 
 def test_stats():
-    data = code.Data.Data("data/hw2-csv.csv")
+    data = Data("data/hw2-csv.csv")
     def div(col): #Diversity
         #Have to figure out how to diversity
         return True
