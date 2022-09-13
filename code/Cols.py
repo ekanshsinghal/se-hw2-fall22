@@ -5,7 +5,7 @@ import code.Sym as Sym
 
 
 def push(t, x):
-	t[1 + len(t)] = x
+	t.append(x)
 	return x
 
 class Cols:
@@ -17,11 +17,11 @@ class Cols:
 		self.y = {}
 		regex = re.compile(r'^[A-Z]*')
 		for c, s in enumerate(names):
-			if regex.match(s):
-				col = push(self.all, Num(c,s))
+			if type(s) == str and regex.match(s):
+				col = push(self.all, Num.Num(c,s))
 			else:
-				col = push(self.all, Sym(c,s))
-			if not s.endswith(':'):
+				col = push(self.all, Sym.Sym(c,s))
+			if type(s) == str and not s.endswith(':'):
 				string = 'sca'
 				if '!' in s or '+' in s or '-' in s:
 					push(self.y, col)
