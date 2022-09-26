@@ -15,6 +15,7 @@ class TestCode:
         eg = {
             # "BAD": TestBad().bad,
             "sym": TestSym().sym,
+            "ALL": TestAll().all
         }
 
         def runs(k):
@@ -28,13 +29,14 @@ class TestCode:
 
             if funcObj.the['dump']:
                 status = True
-                out = eg[k]()
+                out = eg[k](eg, runs, self.fails)
                 
             else:
                 status = False
                 try:
-                    out = eg[k]()
+                    out = eg[k](eg, runs, self.fails)
                     status = True
+                    
                 except:
                     self.fails += 1
 
@@ -50,7 +52,7 @@ class TestCode:
         return self.fails
 
 class TestSym:
-    def sym(self):
+    def sym(self, eg, runs, fails):
         sym = Sym()
         for _, x in enumerate(["a","a","a","a","b","b","c"]):
             sym.add(x)
@@ -58,6 +60,16 @@ class TestSym:
         entropy = (1000*entropy)//1/1000
         funcObj.oo({"mid":mode, "div":entropy})
         return mode == "a" and 1.37 <= entropy <= 1.38
+
+class TestAll:
+    def all(self, eg, runs, fails):
+        testNames = list(eg.keys())
+        for test in testNames:
+            if test == 'ALL':
+                continue
+            if not runs(test):
+                fails += 1
+        return True 
 
 # def test_csv():
 #     def row_function(row):
