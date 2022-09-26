@@ -1,5 +1,6 @@
 # se-hw2-fall22
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7113804.svg)](https://doi.org/10.5281/zenodo.7113804)
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
 ![Build](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/build.yml/badge.svg)
