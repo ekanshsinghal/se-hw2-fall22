@@ -151,7 +151,7 @@ class TestList:
             t.append(key)
         t.sort()
         # print(len(t))
-        return len(t)>0
+        return t
 
 class TestLs:
     def ls(self, eg, runs, fails):
