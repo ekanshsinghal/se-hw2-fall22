@@ -18,6 +18,14 @@ This project is python implementation of a lua script. It contains the following
 This project requires:
  - Python 3.6 or greater
  - pip (or) pip3
+ 
+ To install the packages used by this project, run ```pip install -r requirements.txt``` in the command line. Alternatively, you could run ```pip install .``` in the command line. You may need to use pip3 depending on how it has been set up in your system.
+
+## Testing
+Run ```python -m pytest``` in the command line to run the tests under the test folder.
+
+## Contributing to this project
+Read the Contributing.md to find out how you can help contribute to this project.
 
 
 
