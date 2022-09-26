@@ -18,7 +18,8 @@ class TestCode:
             "sym": TestSym().sym,
             "all": TestAll().all,
             "num": TestNum().num,
-            "bignum": TestBigNum().bignum
+            "bignum": TestBigNum().bignum,
+            "the": TestThe().the
         }
 
         def runs(k):
@@ -38,7 +39,6 @@ class TestCode:
                 status = False
                 try:
                     out = eg[k](eg, runs, self.fails)
-                    print(out)
                     status = True
                 except Exception as ex:
                     print(ex)
@@ -97,6 +97,11 @@ class TestBigNum:
         funcObj.oo(num.nums())
         return 32 == len(num._has)
 
+class TestThe:
+    def the(self, eg, runs, fails):
+        funcObj.oo(funcObj.the) 
+        return True
+
 # class TestCSV:
 #     def test_csv(self):
 #         def row_function(row):
@@ -138,6 +143,3 @@ class TestBigNum:
 
 
 
-# def test_the():
-#     oo(the) 
-#     return True
