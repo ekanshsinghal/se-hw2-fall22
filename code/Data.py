@@ -1,5 +1,5 @@
-import code.Row as Row
-import code.Cols as Cols
+from code.Row import Row
+from code.Cols import Cols
 from code.Num import Num, the
 # from code.Sym import the
 import io
@@ -17,11 +17,11 @@ def rnd(x, places=3):
 class Data:
     def __init__(self, src):
         self.cols = None
-        self.rows = {}
+        self.rows = []
         if isinstance(src, str):
             def add_rows(row):
                 self.add(row)
-            csv(src, add_rows) # Check row
+            self.readCSV(src, add_rows) # Check row
         else:
             for row in src:
                 self.add(row)
@@ -48,36 +48,20 @@ class Data:
 
         return t
 
-def coerce(s):
-    def fun(s1):
-        if s1 == "true":
-            return True
-        elif s1 == "false":
-            return False
-        return s1
-    try:
-        return int(s)
-    except:
-        try:
-            return float(s)
-        except:
-            return fun(s.find("^%s*(.−)%s*$"))
-    # return int(s) or float(s) or fun(s.find("^%s*(.−)%s*$"))
-
-def csv(fname, fun, sep=None, src=None, s=None, t=None):
-    # sep = "([^" + the["Seperator"] + "]+)"
-    sep = "([^" + "]+)"
-    src = open(fname,"r")
-    path = os.path.join(os.path.dirname(__file__), fname)
-    columns = src.readline()
-    while True:
-        s = src.readline()
-        if not s:
-            src.close()
-            break
-        else:
-            t = {}
-            s_list=s.split(",")
-            for s1 in s_list:
-                t[1+len(t)] = coerce(s1)
-            fun(t)
+    def readCSV(fname, fun, sep=None, src=None, s=None, t=None):
+        # sep = "([^" + the["Seperator"] + "]+)"
+        sep = "([^" + "]+)"
+        src = open(fname,"r")
+        path = os.path.join(os.path.dirname(__file__), fname)
+        columns = src.readline()
+        while True:
+            s = src.readline()
+            if not s:
+                src.close()
+                break
+            else:
+                t = {}
+                s_list=s.split(",")
+                # for s1 in s_list:
+                #     t[1+len(t)] = coerce(s1)
+                fun(t)

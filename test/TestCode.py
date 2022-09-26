@@ -1,8 +1,9 @@
 import pytest
 from code.Sym import Sym
-# from code.Num import Num
+from code.Num import Num
 # from code.Data import Data
 from code.Func import Func
+import os
 
 funcObj = Func()
 
@@ -15,11 +16,12 @@ class TestCode:
         eg = {
             # "BAD": TestBad().bad,
             "sym": TestSym().sym,
-            "ALL": TestAll().all
+            "all": TestAll().all,
+            "num": TestNum().num
         }
 
         def runs(k):
-
+            
             if k not in eg:
                 return
             old = {}
@@ -35,9 +37,10 @@ class TestCode:
                 status = False
                 try:
                     out = eg[k](eg, runs, self.fails)
+                    print(out)
                     status = True
-                    
-                except:
+                except Exception as ex:
+                    print(ex)
                     self.fails += 1
 
             for test, value in old.items():
@@ -65,16 +68,26 @@ class TestAll:
     def all(self, eg, runs, fails):
         testNames = list(eg.keys())
         for test in testNames:
-            if test == 'ALL':
+            if test == 'all':
                 continue
             if not runs(test):
                 fails += 1
         return True 
 
-# def test_csv():
-#     def row_function(row):
-#         print(row)
-#     csv("data/hw2-csv.csv",row_function)
+class TestNum:
+    def num(self, eg, runs, fails):
+        num = Num(funcObj.the)
+        for i in range(1, 101):
+            num.add(i)
+        mid, div = num.mid(), num.div()
+        print(mid, div)
+        return 50 <= mid and mid <= 52 and 30.5 < div and div < 32
+
+# class TestCSV:
+#     def test_csv(self):
+#         def row_function(row):
+#             print(row)
+#         self.csv("data/hw2-csv.csv",row_function)
 
 # def test_data():
 #     d = Data("data/hw2-csv.csv")
@@ -108,14 +121,6 @@ class TestAll:
 #     print("xdiv",o(data.stats(2,data.cols.x,div)))
 #     print("ymid",o(data.stats(3,data.cols.y,mid)))
 #     print("ydiv",o(data.stats(3,data.cols.y,div)))
-
-# def test_Num():
-# 	num = Num()
-# 	for i in range(1, 101):
-# 		num.add(i)
-# 	mid, div = num.mid(), num.div()
-# 	print(mid, div)
-# 	assert 50 <= mid and min <= 51 and 30.5 < div and div < 32
 
 # def test_bignum(num=None):
 # 	num = Num()

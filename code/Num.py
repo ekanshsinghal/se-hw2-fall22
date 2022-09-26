@@ -16,13 +16,16 @@ class Num:
 		self.hi=-inf
 		self.isSorted=True
 		self.the = the
-		self.w= -1 if re.find('-$', s) else 1
+		self.w= -1 if re.search('-$', s) else 1
 
 	def nums(self):
+		temp = list(self._has.values())
 		if not self.isSorted:
-			self._has.sort()
+			temp.sort()
+			for i in range(1, len(temp)+1):
+				self._has[i] = temp[i-1]
 			self.isSorted = True
-		return self._has
+		return temp
 
 	def add(self, v = None, pos = -1):
 		if float(v) != '?':
