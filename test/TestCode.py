@@ -21,6 +21,7 @@ class TestCode:
             "bignum": TestBigNum().bignum,
             "the": TestThe().the,
             "data": TestData().data,
+            "stats": TestStats().stats
         }
 
         def runs(k):
@@ -111,20 +112,20 @@ class TestData:
             funcObj.oo(vars(i))
         return True
 
-# class TestStats:
-#     def test_stats(self, eg, runs, fails):
-#         data = Data("data/hw2-csv.csv")
-#         def div(col): #Diversity
-#             #Have to figure out how to diversity
-#             return True
-#         def mid(col): #Mid
-#             #Have to figure out how to find median
-#             return True
-#         print("xmid",o(data.stats(2,data.cols.x,mid)))
-#         print("xdiv",o(data.stats(2,data.cols.x,div)))
-#         print("ymid",o(data.stats(3,data.cols.y,mid)))
-#         print("ydiv",o(data.stats(3,data.cols.y,div)))
-#         return True
+class TestStats:
+    def stats(self, eg, runs, fails):
+        data = Data(funcObj, "data/hw2-csv.csv")
+        def div(col): #Diversity
+            #Have to figure out how to diversity
+            return col.div()
+        def mid(col): #Mid
+            #Have to figure out how to find median
+            return col.mid()
+        print("xmid",funcObj.o(data.stats(2,data.cols.x,mid)))
+        print("xdiv",funcObj.o(data.stats(2,data.cols.x,div)))
+        print("ymid",funcObj.o(data.stats(3,data.cols.y,mid)))
+        print("ydiv",funcObj.o(data.stats(3,data.cols.y,div)))
+        return True
 
 # class TestCSV:
 #     def test_csv(self):
