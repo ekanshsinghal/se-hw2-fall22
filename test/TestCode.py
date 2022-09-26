@@ -17,7 +17,8 @@ class TestCode:
             "bad": TestBad().bad,
             "sym": TestSym().sym,
             "all": TestAll().all,
-            "num": TestNum().num
+            "num": TestNum().num,
+            "bignum": TestBigNum().bignum
         }
 
         def runs(k):
@@ -87,6 +88,15 @@ class TestNum:
         mid, div = num.mid(), num.div()
         return 50 <= mid and mid <= 52 and 30.5 < div and div < 32
 
+class TestBigNum:
+    def bignum(self, eg, runs, fails):
+        num = Num(funcObj.the)
+        funcObj.the["nums"] = 32
+        for i in range(1,1001):
+            num.add(i)
+        funcObj.oo(num.nums())
+        return 32 == len(num._has)
+
 # class TestCSV:
 #     def test_csv(self):
 #         def row_function(row):
@@ -126,16 +136,7 @@ class TestNum:
 #     print("ymid",o(data.stats(3,data.cols.y,mid)))
 #     print("ydiv",o(data.stats(3,data.cols.y,div)))
 
-# def test_bignum(num=None):
-# 	num = Num()
-# 	the["nums"] = 32
 
-# 	for i in range(1,1000):
-# 		num.add(i)
-	
-# 	oo(num.nums())
-
-# 	assert 32 == len(num._has)
 
 # def test_the():
 #     oo(the) 

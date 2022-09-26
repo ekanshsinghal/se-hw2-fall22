@@ -2,7 +2,7 @@ from cmath import inf
 import math
 from math import floor
 from collections import OrderedDict
-from random import random
+from random import random, randint
 import re
 import sys
 
@@ -35,7 +35,7 @@ class Num:
 			if len(self._has) < self.the['nums']:
 				pos = len(self._has) + 1
 			elif random() < (self.the['nums'] / self.n):
-				pos = random.randint(1, len(self._has))
+				pos = randint(1, len(self._has))
 			if pos != -1:
 				self.isSorted = False
 				self._has[pos] = int(v)
