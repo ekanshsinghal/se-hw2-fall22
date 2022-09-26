@@ -1,33 +1,22 @@
 from cmath import inf
+import math
 from math import floor
 from collections import OrderedDict
 from random import random
-
-# from Sym import o, oo
-
-the = {}
-
-def per(t, p = None):
-	p = floor(((p if p else 0.5) * len(t)) + 0.5)
-	return t[max(1, min(len(t), p))]
-
-# def cli(the):
-# 	for key, val in the.items():
-# 		val = str(val)
-# 		for n, x in 
-
+import re
+import sys
 
 class Num:
-	def __init__(self, c=None, s=None):
+	def __init__(self, the, c=0, s=""):
 		self.n = 0
-		self.at = c if c else 0
-		self.name = s if s else ""
-		self._has = []
+		self.at = c+1
+		self.name = s
+		self._has = {}
 		self.lo=inf
 		self.hi=-inf
 		self.isSorted=True
-		s=s if s else ''
-		self.w= -1 if s.endswith('-') else 1
+		self.the = the
+		self.w= -1 if re.find('-$', s) else 1
 
 	def nums(self):
 		if not self.isSorted:
@@ -35,53 +24,28 @@ class Num:
 			self.isSorted = True
 		return self._has
 
-	def add(self, v = None, pos = None):
-		if v != '?':
+	def add(self, v = None, pos = -1):
+		if float(v) != '?':
 			self.n = self.n + 1
-			self.lo = min(v, self.lo)
-			self.hi = max(v, self.hi)
-			if len(self._has) < the['nums']:
-				pos = len(self._has) + 1 # Check + 1
-			elif random() < (the['nums'] / self.n):
-				pos = random(len(self._has))
-			if pos:
+			self.lo = min(float(v), self.lo)
+			self.hi = max(float(v), self.hi)
+			if len(self._has) < self.the['nums']:
+				pos = len(self._has) + 1
+			elif random() < (self.the['nums'] / self.n):
+				pos = random.randint(1, len(self._has))
+			if pos != -1:
 				self.isSorted = False
 				self._has[pos] = int(v)
 	
+	
+	def per(self, t, p = None):
+		p = math.floor(((p if p else 0.5) * len(t)) + 0.5)
+		return t[max(1, min(len(t), p)) - 1]
+
 	def mid(self):
-		return per(self.nums(), 0.5)
+		return self.per(self.nums(), 0.5)
 
 	def div(self, a = None):
 		a = self.nums()
-		return (per(a, 0.9) - per(a, 0.1)) / 2.58
+		return (self.per(a, 0.9) - self.per(a, 0.1)) / 2.58
 
-def cli(t):
-	for slot, v in t.items():
-		v = str(v)
-		# Implement other modules to finish this.
-
-# def test_Num():
-# 	num = Num()
-# 	for i in range(1, 101):
-# 		num.add(i)
-# 	mid, div = num.mid(), num.div()
-# 	print(mid, div)
-# 	return 50 <= mid and min <= 51 and 30.5 < div and div < 32
-
-# def test_bignum(num=None):
-# 	num = Num()
-# 	the["nums"] = 32
-
-# 	for i in range(1,1000):
-# 		num.add(i)
-	
-# 	# Implement oo(num.nums())
-
-# 	return 32 == len(num._has)
-
-# def test_the():
-# 	return oo(the)
-
-# test_bignum()
-# test_Num()
-# test_the()

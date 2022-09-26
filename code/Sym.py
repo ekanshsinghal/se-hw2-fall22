@@ -27,31 +27,3 @@ class Sym:
 				e=e-fun(n/self.n)
 		return e
 
-def o(t, show=None, u=None):
-	if not isinstance(t, dict):
-		return str(t)
-	def show(k, v):
-		if not str(k).find("\0"):
-			v = o(v)
-			return len(t)==0 and (":"+k+" "+v) or str(v)
-	u = {}
-	for k, v in t.items():
-		u[1+len(u)] = show(k,v)
-	if len(t) == 0:
-		u.sort()
-	return u
-
-def oo(t):
-	print(o(t))
-	return t
-
-# def test_Sym():
-# 	sym = Sym()
-# 	for _, x in enumerate(["a","a","a","a","b","b","c"]):
-# 		sym.add(x)
-# 	mode, entropy = sym.mid(), sym.div()
-# 	entropy = (1000*entropy)//1/1000
-# 	oo({"mid":mode, "div":entropy})
-# 	print(mode, entropy)
-
-# test_Sym()
