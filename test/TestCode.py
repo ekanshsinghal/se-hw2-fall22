@@ -14,7 +14,7 @@ class TestCode:
     def runTests(self):
 
         eg = {
-            # "BAD": TestBad().bad,
+            "bad": TestBad().bad,
             "sym": TestSym().sym,
             "all": TestAll().all,
             "num": TestNum().num
@@ -54,6 +54,11 @@ class TestCode:
         runs(funcObj.the["eg"])
         return self.fails
 
+class TestBad:
+    def bad(self, eg, runs, fails):
+        print("Invalid field")
+        return True
+
 class TestSym:
     def sym(self, eg, runs, fails):
         sym = Sym()
@@ -80,7 +85,6 @@ class TestNum:
         for i in range(1, 101):
             num.add(i)
         mid, div = num.mid(), num.div()
-        print(mid, div)
         return 50 <= mid and mid <= 52 and 30.5 < div and div < 32
 
 # class TestCSV:
