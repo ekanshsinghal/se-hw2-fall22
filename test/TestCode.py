@@ -22,7 +22,9 @@ class TestCode:
             "the": TestThe().the,
             "data": TestData().data,
             "stats": TestStats().stats,
-            "csv": TestCSV().csv
+            "csv": TestCSV().csv,
+            "list": TestList().list,
+            "ls": TestLs().ls
         }
 
         def runs(k):
@@ -148,6 +150,14 @@ class TestList:
         for key in eg.keys():
             t.append(key)
         t.sort()
-        return t
+        # print(len(t))
+        return len(t)>0
 
+class TestLs:
+    def ls(self, eg, runs, fails):
 
+        print("\nExamples: \npython -m code.main -e <test_name>\n")
+        print("List of available test names : ")
+        for test in TestList().list(eg, runs, fails):
+            print("\t", test)
+        return True
