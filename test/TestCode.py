@@ -21,7 +21,8 @@ class TestCode:
             "bignum": TestBigNum().bignum,
             "the": TestThe().the,
             "data": TestData().data,
-            "stats": TestStats().stats
+            "stats": TestStats().stats,
+            "csv": TestCSV().csv
         }
 
         def runs(k):
@@ -76,11 +77,12 @@ class TestSym:
 class TestAll:
     def all(self, eg, runs, fails):
         testNames = list(eg.keys())
-        for test in testNames:
-            if test == 'all':
-                continue
-            if not runs(test):
-                fails += 1
+        # for test in testNames:
+        for test in TestList.list(self, eg, runs, fails):
+            if test != 'all':
+                print("\n------------------------------------------------")
+                if not runs(test):
+                    fails += 1
         return True 
 
 class TestNum:
@@ -127,13 +129,25 @@ class TestStats:
         print("ydiv",funcObj.o(data.stats(3,data.cols.y,div)))
         return True
 
-# class TestCSV:
-#     def test_csv(self):
-#         def row_function(row):
-#             print(row)
-#         self.csv("data/hw2-csv.csv",row_function)
+class TestCSV:
+    def csv(self, eg, runs, fails):
+        data = Data(funcObj, [])
+        data.readCSV("data/hw2-csv.csv", self.fun)
+        return True
+
+    def fun(self, row):
+        if list(row.keys())[0] > 10:
+            return
+        else:
+            funcObj.oo(list(row.values())[0])
 
 
-
+class TestList:
+    def list(self, eg, runs, fails):
+        t = []
+        for key in eg.keys():
+            t.append(key)
+        t.sort()
+        return t
 
 
