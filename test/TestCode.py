@@ -1,7 +1,7 @@
 import pytest
 from code.Sym import Sym
 from code.Num import Num
-# from code.Data import Data
+from code.Data import Data
 from code.Func import Func
 import os
 
@@ -19,7 +19,8 @@ class TestCode:
             "all": TestAll().all,
             "num": TestNum().num,
             "bignum": TestBigNum().bignum,
-            "the": TestThe().the
+            "the": TestThe().the,
+            "data": TestData().data,
         }
 
         def runs(k):
@@ -37,11 +38,12 @@ class TestCode:
                 
             else:
                 status = False
-                try:
+                if 1:
                     out = eg[k](eg, runs, self.fails)
                     status = True
-                except Exception as ex:
-                    print(ex)
+                # except Exception as ex:
+                    # print(ex)
+                else:
                     self.fails += 1
 
             for test, value in old.items():
@@ -102,44 +104,35 @@ class TestThe:
         funcObj.oo(funcObj.the) 
         return True
 
+class TestData:
+    def data(self, eg, runs, fails):
+        d = Data(funcObj, "data/hw2-csv.csv")
+        for i in d.cols.y:
+            funcObj.oo(vars(i))
+        return True
+
+# class TestStats:
+#     def test_stats(self, eg, runs, fails):
+#         data = Data("data/hw2-csv.csv")
+#         def div(col): #Diversity
+#             #Have to figure out how to diversity
+#             return True
+#         def mid(col): #Mid
+#             #Have to figure out how to find median
+#             return True
+#         print("xmid",o(data.stats(2,data.cols.x,mid)))
+#         print("xdiv",o(data.stats(2,data.cols.x,div)))
+#         print("ymid",o(data.stats(3,data.cols.y,mid)))
+#         print("ydiv",o(data.stats(3,data.cols.y,div)))
+#         return True
+
 # class TestCSV:
 #     def test_csv(self):
 #         def row_function(row):
 #             print(row)
 #         self.csv("data/hw2-csv.csv",row_function)
 
-# def test_data():
-#     d = Data("data/hw2-csv.csv")
-#     for _,i in d.cols.y.items():
-#         print(i)
 
-
-# def o(t, show=None, u=None):
-# 	if not isinstance(t, dict):
-# 		return str(t)
-# 	def show(k, v):
-# 		if not str(k).find("\0"):
-# 			v = o(v)
-# 			return len(t)==0 and (":"+k+" "+v) or str(v)
-# 	u = {}
-# 	for k, v in t.items():
-# 		u[1+len(u)] = show(k,v)
-# 	if len(t) == 0:
-# 		u.sort()
-# 	return u
-
-# def test_stats():
-#     data = Data("data/hw2-csv.csv")
-#     def div(col): #Diversity
-#         #Have to figure out how to diversity
-#         return True
-#     def mid(col): #Mid
-#         #Have to figure out how to find median
-#         return True
-#     print("xmid",o(data.stats(2,data.cols.x,mid)))
-#     print("xdiv",o(data.stats(2,data.cols.x,div)))
-#     print("ymid",o(data.stats(3,data.cols.y,mid)))
-#     print("ydiv",o(data.stats(3,data.cols.y,div)))
 
 
 

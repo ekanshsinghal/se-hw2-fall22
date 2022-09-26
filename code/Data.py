@@ -1,39 +1,65 @@
 from code.Row import Row
 from code.Cols import Cols
-from code.Num import Num, the
-# from code.Sym import the
+from code.Num import Num
+from code.Row import Row
 import io
 import math
 import os
+import csv
 
-def push(t, x):
-	t[1 + len(t)] = x
-	return x
 
-def rnd(x, places=3):
-    mult = pow(10, places)
-    return math.floor(x * mult + 0.5) / mult
 
 class Data:
-    def __init__(self, src):
+    def __init__(self, funcObj, src):
         self.cols = None
         self.rows = []
+        self.funcObj = funcObj
+        self.the = funcObj.the
+        
         if isinstance(src, str):
-            def add_rows(row):
-                self.add(row)
-            self.readCSV(src, add_rows) # Check row
+            self.readCSV(src, self.add)
+            
         else:
             for row in src:
                 self.add(row)
 
-    def add(self, xs=None, row=None):
+    def readCSV(self, fname, fun, sep=None, src=None, s=None, t=None):
+        # sep = "([^" + the["Seperator"] + "]+)"
+        
+        sep = self.the["Seperator"]
+        # src = open(fname,"r")
+        # path = os.path.join(os.path.dirname(__file__), fname)
+
+        src = open(fname)
+        reader = csv.reader(src, delimiter=sep)
+
+        for n, row in enumerate(reader):
+            x = []
+            for col in row:
+                x.append(self.funcObj.coerce(col))
+            fun({n+1: x})
+
+        # while True:
+        #     s = src.readline()
+        #     if not s:
+        #         src.close()
+        #         break
+        #     else:
+        #         t = {}
+        #         s_list=s.split(",")
+        #         # for s1 in s_list:
+        #         #     t[1+len(t)] = coerce(s1)
+        #         fun(t)
+
+    def add(self, xs):
         if not self.cols:
-            self.cols = Cols(xs)
+            self.cols = Cols(list(xs.values())[0], self.the)
         else:
-            row = push(self.rows, xs.cells and xs or Row(xs))
-            for _, todo in enumerate(self.cols.x + self.cols.y):
-                for _, col in todo.items():
-                    col.add(row.cells[col.at]) # Check what is col.at
+            row = Row(xs)
+            self.rows.append(row)
+            for todo in [self.cols.x + self.cols.y]:
+                for col in todo:
+                    col.add(list(row.cells.values())[0][col.at-1]) # Check col.at -1 or col.at
 
     def stats(self, places=3, showCols=None, fun=None, t=None, v=None):
         showCols = showCols or self.cols.y
@@ -43,25 +69,12 @@ class Data:
 
         for col in showCols:
             v = fun(col)
-            v = isinstance(v, int) and rnd(v, places) or v
+            v = isinstance(v, int) and self.rnd(v, places) or v
             t[col.name] = v
 
         return t
 
-    def readCSV(fname, fun, sep=None, src=None, s=None, t=None):
-        # sep = "([^" + the["Seperator"] + "]+)"
-        sep = "([^" + "]+)"
-        src = open(fname,"r")
-        path = os.path.join(os.path.dirname(__file__), fname)
-        columns = src.readline()
-        while True:
-            s = src.readline()
-            if not s:
-                src.close()
-                break
-            else:
-                t = {}
-                s_list=s.split(",")
-                # for s1 in s_list:
-                #     t[1+len(t)] = coerce(s1)
-                fun(t)
+    def rnd(self, x=10, places=3):
+        mult = pow(x, places)
+        return math.floor(x * mult + 0.5) / mult
+    
