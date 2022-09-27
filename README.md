@@ -23,7 +23,7 @@ This project requires:
  To install the packages used by this project, run ```pip install -r requirements.txt``` in the command line. Alternatively, you could run ```pip install .``` in the command line. You may need to use pip3 depending on how it has been set up in your system.
 
 ## Testing
-Run ```python -m pytest``` in the command line to run the tests under the test folder.
+Run ```python -m code.main -e all``` in the command line to run the tests under the test folder.
 
 ## Contributing to this project
 Read the Contributing.md to find out how you can help contribute to this project.
