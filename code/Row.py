@@ -1,9 +1,9 @@
-import copy
+# import copy
 
 class Row:
     def __init__(self, t=None):
         self.cells = t
-        self.cooked = copy.copy(t)
+        self.cooked = self.copy(t)
         self.isEvaled = False
 
     def copy(self, t, u=None):
