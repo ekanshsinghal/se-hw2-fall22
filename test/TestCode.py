@@ -14,17 +14,18 @@ class TestCode:
     def runTests(self):
 
         eg = {
-            "bad": TestBad().bad,
-            "sym": TestSym().sym,
             "all": TestAll().all,
+            "list": TestList().list,
+            "ls": TestLs().ls
+            "sym": TestSym().sym,
             "num": TestNum().num,
             "bignum": TestBigNum().bignum,
             "the": TestThe().the,
             "data": TestData().data,
+            "bad": TestBad().bad,
             "stats": TestStats().stats,
             "csv": TestCSV().csv,
-            "list": TestList().list,
-            "ls": TestLs().ls
+            
         }
 
         def runs(k):
