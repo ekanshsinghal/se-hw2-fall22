@@ -8,7 +8,6 @@
 ![Python](https://img.shields.io/badge/python-v3.8+-yellow.svg)
 [![GitHub Release](https://img.shields.io/github/release/ekanshsinghal/se-hw2-fall22)](https://github.com/ekanshsinghal/se-hw2-fall22/releases/)
 ![GitHub issues](https://img.shields.io/github/issues/ekanshsinghal/se-hw2-fall22)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/ekanshsinghal/se-hw2-fall22)
 [![codecov](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22/branch/main/graph/badge.svg?token=9awZ8cDbJ7)](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22)
 
 
@@ -56,30 +55,34 @@ Run ```python -m code.main -e all``` in the command line to run the tests under 
 ## Test results
 ```
 ------------------------------------------------
-{7 86 94 106 107 134 190 197 248 292 362 404 430 472 478 512 516 553 610 614 640 657 694 711 723 732 750 834 869 873 948 959}
+Invalid field
+!!!!!! FAIL bad True
+
+------------------------------------------------
+{4 27 42 58 71 119 120 180 192 236 294 332 343 345 429 454 496 573 577 634 650 663 696 730 760 795 843 856 878 921 953 967}
 !!!!!! PASS bignum True
 
 ------------------------------------------------
 {Clndrs Volume Hp: Lbs- Acc+ Model origin Mpg+}
-{8 304 193 4732 18.5 70 1 10}
-{8 360 215 4615 14 70 1 10}
-{8 307 200 4376 15 70 1 10}
-{8 318 210 4382 13.5 70 1 10}
-{8 429 208 4633 11 72 1 10}
-{8 400 150 4997 14 73 1 10}
-{8 350 180 3664 11 73 1 10}
-{8 383 180 4955 11.5 71 1 10}
-{8 350 160 4456 13.5 72 1 10}
+{8.0 304.0 193.0 4732.0 18.5 70.0 1.0 10.0}
+{8.0 360.0 215.0 4615.0 14.0 70.0 1.0 10.0}
+{8.0 307.0 200.0 4376.0 15.0 70.0 1.0 10.0}
+{8.0 318.0 210.0 4382.0 13.5 70.0 1.0 10.0}
+{8.0 429.0 208.0 4633.0 11.0 72.0 1.0 10.0}
+{8.0 400.0 150.0 4997.0 14.0 73.0 1.0 10.0}
+{8.0 350.0 180.0 3664.0 11.0 73.0 1.0 10.0}
+{8.0 383.0 180.0 4955.0 11.5 71.0 1.0 10.0}
+{8.0 350.0 160.0 4456.0 13.5 72.0 1.0 10.0}
 !!!!!! PASS csv True
 
 ------------------------------------------------
-{:at 4 :hi 5140 :isSorted False :lo 1613 :n 398 :name Lbs- :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512 :seed 10019} :w -1}
-{:at 5 :hi 24.8 :isSorted False :lo 8 :n 398 :name Acc+ :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512 :seed 10019} :w 1}
-{:at 8 :hi 50 :isSorted False :lo 10 :n 398 :name Mpg+ :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512 :seed 10019} :w 1}
+{:at 4 :hi 5140.0 :isSorted False :lo 1613.0 :n 398 :name Lbs- :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w -1}
+{:at 5 :hi 24.8 :isSorted False :lo 8.0 :n 398 :name Acc+ :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w 1}
+{:at 8 :hi 50.0 :isSorted False :lo 10.0 :n 398 :name Mpg+ :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w 1}
 !!!!!! PASS data True
 
 ------------------------------------------------
-!!!!!! PASS list True
+!!!!!! FAIL list True
 
 ------------------------------------------------
 
@@ -104,10 +107,10 @@ List of available test names :
 !!!!!! PASS num True
 
 ------------------------------------------------
-xmid {:Clndrs 4 :Model 76 :Volume 146 :origin 73}
-xdiv {:Clndrs 1.5503875968992247 :Model 3.875968992248062 :Volume 100.7751937984496 :origin 3.6906936271109134}
+xmid {:Clndrs 4 :Model 76 :Volume 146 :origin 73.0}
+xdiv {:Clndrs 1.55 :Model 3.88 :Volume 100.78 :origin 3.69}
 ymid {:Acc+ 15 :Lbs- 2800 :Mpg+ 20}
-ydiv {:Acc+ 2.7131782945736433 :Lbs- 887.2093023255813 :Mpg+ 7.751937984496124}
+ydiv {:Acc+ 2.713 :Lbs- 887.209 :Mpg+ 7.752}
 !!!!!! PASS stats True
 
 ------------------------------------------------
@@ -115,7 +118,7 @@ ydiv {:Acc+ 2.7131782945736433 :Lbs- 887.2093023255813 :Mpg+ 7.751937984496124}
 !!!!!! PASS sym True
 
 ------------------------------------------------
-{:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512 :seed 10019}
+{:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0}
 !!!!!! PASS the True
 !!!!!! PASS all True
 # Failures 0
