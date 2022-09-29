@@ -16,7 +16,7 @@ class TestCode:
         eg = {
             "all": TestAll().all,
             "list": TestList().list,
-            "ls": TestLs().ls
+            "ls": TestLs().ls,
             "sym": TestSym().sym,
             "num": TestNum().num,
             "bignum": TestBigNum().bignum,
@@ -24,8 +24,7 @@ class TestCode:
             "data": TestData().data,
             "bad": TestBad().bad,
             "stats": TestStats().stats,
-            "csv": TestCSV().csv,
-            
+            "csv": TestCSV().csv
         }
 
         def runs(k):
