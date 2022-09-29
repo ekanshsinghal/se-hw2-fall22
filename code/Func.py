@@ -29,8 +29,8 @@ class Func:
         ss = s
         try:
             ss = float(s)
-            if ss == int(ss):
-                ss = int(ss)
+            # if ss == int(ss):
+            #     ss = int(ss)
         except:
             ss = fun(re.search('^\s*(.+?)\s*$', s).group(1))
         # return int(ss) if float(ss) == int(ss) else fun(re.search('^\s*(.+?)\s*$', s))
@@ -61,7 +61,7 @@ class Func:
         def show(k, v):
             if str(k).find('_') != 0:
                 v = self.o(v)
-                return isinstance(t, dict) and (":"+str(k)+" "+str(self.coerce(v))) or str(v)
+                return isinstance(t, dict) and (":"+str(k)+" "+str(v)) or str(v)
         
         u = []
         if isinstance(t, dict):
@@ -89,23 +89,7 @@ class Func:
     
 
     
-    # def csv(fname, fun, sep=None, src=None, s=None, t=None):
 
-    #     sep = "([^" + the[Separator] + "]+)"
-    #     src = open(fname,"r")
-    #     path = os.path.join(os.path.dirname(__file__), fname)
-    #     columns = src.readline()
-    #     while True:
-    #         s = src.readline()
-    #         if not s:
-    #             src.close()
-    #             break
-    #         else:
-    #             t = {}
-    #             s_list=s.split(",")
-    #             for s1 in s_list:
-    #                 t[1+len(t)] = coerce(s1)
-    #             fun(t)
 
     # def push(t, x):
     #     t[1 + len(t)] = x
