@@ -42,18 +42,17 @@ class TestCode:
                 
             else:
                 status = False
-                if 1:
+                try:
                     out = eg[k](eg, runs, self.fails)
                     status = True
-                # except Exception as ex:
-                    # print(ex)
-                else:
+                except Exception as ex:
+                    print(ex)
                     self.fails += 1
 
             for test, value in old.items():
                 funcObj.the[test] = value
             
-            msg = status and ((out == True and "PASS") or "FAIL") or "CRASH"
+            msg = status and ((out != False and "PASS") or "FAIL") or "CRASH"
             print("!!!!!!", msg, k, status)
             return out or "Error"
 
