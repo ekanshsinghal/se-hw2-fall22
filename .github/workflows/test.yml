@@ -35,5 +35,7 @@ jobs:
         python -m pip install coverage
         pip install coverage-badge
         python -m coverage run -m code.main -e all
-        coverage report > coverage_report.txt
-        coverage-badge -o coverage.svg
+        python -m coverage report 
+        # coverage-badge -o coverage.svg	        
+        coverage = $(tail -1 coverage_report.txt | awk '{print $(NF)}')
+        echo "Code coverage = $coverage"
