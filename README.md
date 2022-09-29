@@ -5,7 +5,6 @@
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
 ![Build](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/build.yml/badge.svg)
 ![Test](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/test.yml/badge.svg)
-[![Code Coverage](https://img.shields.io/badge/Code%20Coverage-95%25-brightgreen)](https://github.com/ekanshsinghal/se-hw2-fall22/blob/main/coverage_report.txt)
 [![codecov](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22/branch/main/graph/badge.svg?token=9awZ8cDbJ7)](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22)
 
 ## About the project
