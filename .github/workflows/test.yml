@@ -37,5 +37,5 @@ jobs:
         python -m coverage run -m code.main -e all
         python -m coverage report 
         # coverage-badge -o coverage.svg	        
-        coverage = $(tail -1 coverage_report.txt | awk '{print $(NF)}')
-        echo "Code coverage = $coverage"
+        percent = $(tail -1 coverage_report.txt | awk '{print $(NF)}')
+        echo "Code coverage = $percent"
