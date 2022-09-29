@@ -69,12 +69,10 @@ class Data:
 
         for col in showCols:
             v = fun(col)
-            v = isinstance(v, int) and self.rnd(v, places) or v
+            v =  self.rnd(v, places) if isinstance(v, float) else v
             t[col.name] = v
 
         return t
 
-    def rnd(self, x=10, places=3):
-        mult = pow(x, places)
-        return math.floor(x * mult + 0.5) / mult
-    
+    def rnd(self, x, places=3):
+        return round(x, places)
