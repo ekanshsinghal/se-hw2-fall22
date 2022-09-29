@@ -8,7 +8,6 @@
 ![Python](https://img.shields.io/badge/python-v3.8+-yellow.svg)
 [![GitHub Release](https://img.shields.io/github/release/ekanshsinghal/se-hw2-fall22)](https://github.com/ekanshsinghal/se-hw2-fall22/releases/)
 ![GitHub issues](https://img.shields.io/github/issues/ekanshsinghal/se-hw2-fall22)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/ekanshsinghal/se-hw2-fall22)
 [![codecov](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22/branch/main/graph/badge.svg?token=9awZ8cDbJ7)](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22)
 
 
