@@ -2,11 +2,6 @@ import re
 from code.Num import Num
 from code.Sym import Sym
 
-
-def push(t, x):
-	t.append(x)
-	return x
-
 class Cols:
 	def __init__(self, names, the) -> None:
 		self.names = names
