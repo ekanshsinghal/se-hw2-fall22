@@ -52,7 +52,7 @@ class TestCode:
             for test, value in old.items():
                 funcObj.the[test] = value
             
-            msg = status and ((out != False and "PASS") or "FAIL") or "CRASH"
+            msg = status and ((out == True and "PASS") or "FAIL") or "CRASH"
             print("!!!!!!", msg, k, status)
             return out or "Error"
 
@@ -63,7 +63,6 @@ class TestCode:
 class TestBad:
     def bad(self, eg, runs, fails):
         print("Invalid field")
-        return True
 
 class TestSym:
     def sym(self, eg, runs, fails):
