@@ -5,7 +5,9 @@
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
 ![Build](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/build.yml/badge.svg)
 ![Test](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/test.yml/badge.svg)
-[![Code Coverage](https://img.shields.io/codecov/c/github/dwyl/hapi-auth-jwt2.svg?maxAge=2592000)](https://github.com/ekanshsinghal/se-hw2-fall22/blob/main/coverage_report.txt)
+<!-- [![Code Coverage](https://img.shields.io/codecov/c/github/dwyl/hapi-auth-jwt2.svg?maxAge=2592000)](https://github.com/ekanshsinghal/se-hw2-fall22/blob/main/coverage_report.txt) -->
+[![codecov.io](https://codecov.io/github/ekanshsinghal/se-hw2-fall22/blob/main/coverage.svg?branch=master)]
+(https://codecov.io/github/ekanshsinghal/se-hw2-fall22?branch=master)
 
 ## About the project
 
