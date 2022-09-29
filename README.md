@@ -32,21 +32,21 @@ This project requires:
 ```
 Name               Stmts   Miss  Cover
 --------------------------------------
-code/Cols.py          23      3    87%
-code/Data.py          47      1    98%
-code/Func.py          65      2    97%
-code/Num.py           46      0   100%
-code/Row.py           12      4    67%
-code/Sym.py           25      0   100%
-code/__init__.py       0      0   100%
-code/main.py          15      0   100%
-data/help.py           3      0   100%
-test/TestCode.py     118      7    94%
-test/__init__.py       0      0   100%
+code\Cols.py          20      1    95%
+code\Data.py          46      1    98%
+code\Func.py          63      2    97%
+code\Num.py           46      0   100%
+code\Row.py            6      0   100%
+code\Sym.py           25      0   100%
+code\__init__.py       0      0   100%
+code\main.py          15      0   100%
+data\help.py           3      0   100%
+test\TestCode.py     106      7    93%
+test\__init__.py       0      0   100%
 --------------------------------------
-TOTAL                354     17    95%
+TOTAL                330     11    97%
 
-Code coverage = 95%
+Code coverage = 97%
 ```
 
 ## Testing
