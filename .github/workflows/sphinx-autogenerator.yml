@@ -34,7 +34,7 @@ jobs:
     - name: Build documentation and commit
       run: |
           cd docs/
-          apt-get install python3-sphinx
+          sudo apt-get install python3-sphinx
           make html
           cd ..
           git config --global user.name "gowtham-sathyan"
