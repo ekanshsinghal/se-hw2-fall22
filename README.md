@@ -39,19 +39,19 @@ https://user-images.githubusercontent.com/30636208/193187254-7ed8de42-cda7-42af-
 ```
 Name               Stmts   Miss  Cover
 --------------------------------------
-code\Cols.py          20      1    95%
-code\Data.py          46      1    98%
-code\Func.py          63      2    97%
-code\Num.py           46      0   100%
-code\Row.py            6      0   100%
-code\Sym.py           25      0   100%
-code\__init__.py       0      0   100%
-code\main.py          15      0   100%
-data\help.py           3      0   100%
-test\TestCode.py     106      7    93%
-test\__init__.py       0      0   100%
+code/Cols.py          20      1    95%
+code/Data.py          46      1    98%
+code/Func.py          63      2    97%
+code/Num.py           46      0   100%
+code/Row.py            6      0   100%
+code/Sym.py           25      0   100%
+code/__init__.py       0      0   100%
+code/main.py          15      0   100%
+data/help.py           3      0   100%
+test/TestCode.py     108      7    94%
+test/__init__.py       0      0   100%
 --------------------------------------
-TOTAL                330     11    97%
+TOTAL                332     11    97%
 
 Code coverage = 97%
 ```
@@ -66,7 +66,7 @@ Invalid field
 !!!!!! FAIL bad True
 
 ------------------------------------------------
-{4 27 42 58 71 119 120 180 192 236 294 332 343 345 429 454 496 573 577 634 650 663 696 730 760 795 843 856 878 921 953 967}
+{19 73 79 81 106 124 136 195 197 198 237 241 248 253 259 267 329 369 384 415 438 455 485 544 556 626 674 679 730 781 861 910}
 !!!!!! PASS bignum True
 
 ------------------------------------------------
@@ -83,9 +83,9 @@ Invalid field
 !!!!!! PASS csv True
 
 ------------------------------------------------
-{:at 4 :hi 5140.0 :isSorted False :lo 1613.0 :n 398 :name Lbs- :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w -1}
-{:at 5 :hi 24.8 :isSorted False :lo 8.0 :n 398 :name Acc+ :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w 1}
-{:at 8 :hi 50.0 :isSorted False :lo 10.0 :n 398 :name Mpg+ :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w 1}
+{:at 3 :hi 5140.0 :isSorted False :lo 1613.0 :n 398 :name Lbs- :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w -1}
+{:at 4 :hi 24.8 :isSorted False :lo 8.0 :n 398 :name Acc+ :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w 1}
+{:at 7 :hi 50.0 :isSorted False :lo 10.0 :n 398 :name Mpg+ :the {:Seperator , :dump False :eg all :file ../data/auto93.csv :help False :nums 512.0 :seed 10019.0} :w 1}
 !!!!!! PASS data True
 
 ------------------------------------------------
@@ -114,10 +114,10 @@ List of available test names :
 !!!!!! PASS num True
 
 ------------------------------------------------
-xmid {:Clndrs 4 :Model 76 :Volume 146 :origin 73.0}
-xdiv {:Clndrs 1.55 :Model 3.88 :Volume 100.78 :origin 3.69}
-ymid {:Acc+ 15 :Lbs- 2800 :Mpg+ 20}
-ydiv {:Acc+ 2.713 :Lbs- 887.209 :Mpg+ 7.752}
+xmid {:Clndrs 4 :Model 76 :Volume 151 :origin 1.0}
+xdiv {:Clndrs 1.55 :Model 3.88 :Volume 100.78 :origin 1.33}
+ymid {:Acc+ 15 :Lbs- 2807 :Mpg+ 20}
+ydiv {:Acc+ 2.713 :Lbs- 886.822 :Mpg+ 7.752}
 !!!!!! PASS stats True
 
 ------------------------------------------------
