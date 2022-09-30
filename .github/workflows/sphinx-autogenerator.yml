@@ -23,16 +23,13 @@ jobs:
       with:
         name: DocumentationHTML
         path: docs/_build/html/
-    - name: setup git config
+    - uses: actions/checkout@v2
+    - name: setup git config and commit
       run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-          git config user.name "gowtham-sathyan"
-          git config user.email "gowthamsathyan@gmail.com"
-
-    - name: commit
-      run: |
-          # Stage the file, commit and push
+          git config --global user.name "gowtham-sathyan"
+          git config --global user.email "gowthamsathyan@gmail.com"
           git add .
           git commit -m "Updated documentation"
-          git push origin HEAD:main
+          git push
     # ===============================
