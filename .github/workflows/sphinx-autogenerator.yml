@@ -36,6 +36,8 @@ jobs:
           git pull
           cd docs/
           sudo apt-get install python3-sphinx
+          sudo rm code.rst
+          sudo rm modules.rst
           sphinx-apidoc -o . ../code/
           make html
           cd ..
