@@ -8,6 +8,7 @@
 ![Python](https://img.shields.io/badge/python-v3.8+-yellow.svg)
 [![GitHub Release](https://img.shields.io/github/release/ekanshsinghal/se-hw2-fall22)](https://github.com/ekanshsinghal/se-hw2-fall22/releases/)
 ![GitHub issues](https://img.shields.io/github/issues/ekanshsinghal/se-hw2-fall22)
+[![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 [![codecov](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22/branch/main/graph/badge.svg?token=9awZ8cDbJ7&maxAge=10000)](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22)
 
 
