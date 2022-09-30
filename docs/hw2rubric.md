@@ -36,7 +36,7 @@ Group 1: https://github.com/sohambapat/SWE-Group-32-Assignments
 
 Group 2: https://github.com/ShiveshJha12/SE_group28_HW2
 
-|Notes|Self Assessment (Total 50)|evidence|
+|Notes|Self Assessment (Total 54)|evidence|
 |-----|---------------|--------|
 |Video1|0|Not required for hw| 
 |Video2|0|Not required for hw| 
@@ -52,9 +52,9 @@ Group 2: https://github.com/ShiveshJha12/SE_group28_HW2
 |Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3|https://github.com/ShiveshJha12/SE_group28_HW2/blob/main/README.md
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|0|NA
 |Use of version control tools|3|
-|Use of style checkers |0|
-|Use of code formatters. |1|
-|Use of syntax checkers. |1|
+|Use of style checkers |2|
+|Use of code formatters. |2|
+|Use of syntax checkers. |2|
 |Use of code coverage |0|https://github.com/ShiveshJha12/SE_group28_HW2
 |Other automated analysis tools|1|https://github.com/ShiveshJha12/SE_group28_HW2
 |Test cases exist|3|https://github.com/ShiveshJha12/SE_group28_HW2/tree/main/test
