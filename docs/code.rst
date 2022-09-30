@@ -20,6 +20,14 @@ code.Data module
     :undoc-members:
     :show-inheritance:
 
+code.Dummy module
+-----------------
+
+.. automodule:: code.Dummy
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 code.Func module
 ----------------
 
