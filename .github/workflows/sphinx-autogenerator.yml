@@ -26,16 +26,20 @@ jobs:
       with:
         name: DocumentationHTML
         path: docs/_build/html/
-    - uses: actions/checkout@v2
-    - name: setup git config and commit
-      run: |
-          git clone https://github.com/ekanshsinghal/se-hw2-fall22.git
-          rm -rf se-hw2-fall22/docs/_build/html/*
-          cp -r docs/_build/html/* se-hw2-fall22/docs/_build/html/
-          cd se-hw2-fall22
-          git config --global user.name "gowtham-sathyan"
-          git config --global user.email "gowthamsathyan@gmail.com"
-          git add .
-          git commit -m "Updated documentation" -a || true
-          git push
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Updated documentation
+        branch: main
+#     - uses: actions/checkout@v2
+#     - name: setup git config and commit
+#       run: |
+#           git clone https://github.com/ekanshsinghal/se-hw2-fall22.git
+#           rm -rf se-hw2-fall22/docs/_build/html/*
+#           cp -r docs/_build/html/* se-hw2-fall22/docs/_build/html/
+#           cd se-hw2-fall22
+#           git config --global user.name "gowtham-sathyan"
+#           git config --global user.email "gowthamsathyan@gmail.com"
+#           git add .
+#           git commit -m "Updated documentation" -a || true
+#           git push
     # ===============================
