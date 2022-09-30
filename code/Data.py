@@ -23,13 +23,8 @@ class Data:
             for row in src:
                 self.add(row)
 
-    def readCSV(self, fname, fun, sep=None, src=None, s=None, t=None):
-        # sep = "([^" + the["Seperator"] + "]+)"
-        
+    def readCSV(self, fname, fun, sep=None, src=None, s=None, t=None):        
         sep = self.the["Seperator"]
-        # src = open(fname,"r")
-        # path = os.path.join(os.path.dirname(__file__), fname)
-
         src = open(fname)
         reader = csv.reader(src, delimiter=sep)
 
@@ -37,32 +32,21 @@ class Data:
             x = []
             for col in row:
                 x.append(self.funcObj.coerce(col))
-            fun({n+1: x})
+            fun(x)
 
-        # while True:
-        #     s = src.readline()
-        #     if not s:
-        #         src.close()
-        #         break
-        #     else:
-        #         t = {}
-        #         s_list=s.split(",")
-        #         # for s1 in s_list:
-        #         #     t[1+len(t)] = coerce(s1)
-        #         fun(t)
-
-    def add(self, xs):
+    def add(self, row):
         if not self.cols:
-            self.cols = Cols(list(xs.values())[0], self.the)
+            self.cols = Cols(row, self.the)
         else:
-            row = Row(xs)
+            row = Row(row)
             self.rows.append(row)
-            for todo in [self.cols.x + self.cols.y]:
-                for col in todo:
-                    col.add(list(row.cells.values())[0][col.at-1]) # Check col.at -1 or col.at
+            for _, todo in enumerate([self.cols.x, self.cols.y]):
+                for _, col in enumerate(todo):
+                    col.add(row.cells[col.at]) # Check col.at -1 or col.at
+                
 
     def stats(self, places=3, showCols=None, fun=None, t=None, v=None):
-        showCols = showCols or self.cols.y
+        showCols = showCols or self.cols.x
         fun = fun or "mid"
 
         t = {}

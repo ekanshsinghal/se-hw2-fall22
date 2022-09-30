@@ -9,7 +9,7 @@ import sys
 class Num:
 	def __init__(self, the, c=0, s=""):
 		self.n = 0
-		self.at = c+1
+		self.at = c
 		self.name = s
 		self._has = {}
 		self.lo=inf
@@ -43,7 +43,7 @@ class Num:
 	
 	def per(self, t, p = None):
 		p = math.floor(((p if p else 0.5) * len(t)) + 0.5)
-		return t[max(1, min(len(t), p)) - 1]
+		return t[max(0, min(len(t)-1, p))]
 
 	def mid(self):
 		return self.per(self.nums(), 0.5)

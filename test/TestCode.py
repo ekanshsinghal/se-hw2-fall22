@@ -122,15 +122,17 @@ class TestCode:
         return True
 
     def csv(self, eg, runs, fails):
+        self.n = 0
         data = Data(funcObj, [])
         data.readCSV("data/hw2-csv.csv", self.fun)
         return True
 
     def fun(self, row):
-        if list(row.keys())[0] > 10:
-            return
+        self.n = self.n + 1
+        if self.n > 10:
+            return self.n
         else:
-            funcObj.oo(list(row.values())[0])
+            return funcObj.oo(row)
 
 
     def list(self, eg, runs, fails):
