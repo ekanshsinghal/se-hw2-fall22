@@ -35,9 +35,9 @@ jobs:
         python -m pip install coverage
         pip install coverage-badge
         python -m coverage run -m code.main -e all
-        python -m coverage report > coverage_report.txt
+        python -m coverage report 
         # coverage-badge -o coverage.svg	        
-        percent=$(tail -1 coverage_report.txt | awk '{print $(NF)}')
-        echo "Code coverage = $percent"
+        # percent=$(tail -1 coverage_report.txt | awk '{print $(NF)}')
+        # echo "Code coverage = $percent"
     - name: CodeCov
       uses: codecov/codecov-action@v3
