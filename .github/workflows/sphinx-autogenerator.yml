@@ -34,5 +34,5 @@ jobs:
           # Stage the file, commit and push
           git add .
           git commit -m "Updated documentation"
-          git push
+          git push origin HEAD:main
     # ===============================
