@@ -9,21 +9,23 @@ class Sym:
 	def add(self, v=None):
 		if v!="?":
 			self.n = self.n+1
-			self._has[v] = 1 + ((self._has[v]) if v in self._has else 0)
+			if v in self._has:
+				self._has[v] += 1
+			else:
+				self._has[v] = 1
+		return self._has
 
-	def mid(self, col=None, most=None, mode=None):
-		most=-1
+	def mid(self, col=None, most=-1, mode=None):
+
 		for k,v in self._has.items():
 			if v>most:
 				mode,most=k,v
 		return mode
 
-	def div(self, e=None, fun=None):
+	def div(self, e=0):
 		def fun(p):
 			return p*math.log(p,2)
-		e=0
 		for _,n in self._has.items():
-			if n>0:
-				e=e-fun(n/self.n)
+			e -= fun(n/self.n)
 		return e
 
