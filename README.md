@@ -3,12 +3,12 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7113804.svg)](https://doi.org/10.5281/zenodo.7113804)
 ![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
 ![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
-![Build](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/build.yml/badge.svg)
-![Test](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/test.yml/badge.svg)
+![Build](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/build.yml/badge.svg?maxAge=10000)
+![Test](https://github.com/ekanshsinghal/se-hw2-fall22/actions/workflows/test.yml/badge.svg?maxAge=10000)
 ![Python](https://img.shields.io/badge/python-v3.8+-yellow.svg)
 [![GitHub Release](https://img.shields.io/github/release/ekanshsinghal/se-hw2-fall22)](https://github.com/ekanshsinghal/se-hw2-fall22/releases/)
 ![GitHub issues](https://img.shields.io/github/issues/ekanshsinghal/se-hw2-fall22)
-[![codecov](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22/branch/main/graph/badge.svg?token=9awZ8cDbJ7)](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22)
+[![codecov](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22/branch/main/graph/badge.svg?token=9awZ8cDbJ7&maxAge=10000)](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22)
 
 
 ## About the project
@@ -27,6 +27,11 @@ This project requires:
  
  To install the packages used by this project, run ```pip install -r requirements.txt``` in the command line. Alternatively, you could run ```pip install .``` in the command line. You may need to use pip3 depending on how it has been set up in your system.
  
+
+## Demo Video 
+https://user-images.githubusercontent.com/30636208/193187254-7ed8de42-cda7-42af-934f-4045b585bb16.mp4
+
+
 ## Code Coverage report
 
 ```

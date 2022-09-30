@@ -38,3 +38,15 @@ jobs:
 #     - name: Test with pytest
 #       run: |
 #         python -m pytest
+<<<<<<< HEAD
+=======
+#     - name: Make Code Badge
+#       uses: shadowmoose/GHA-LoC-Badge@1.0.0
+#       id: badge
+#       with:
+#         debug: true
+#         directory: ./
+#         badge: ./output/badge.svg
+#         patterns: '*.js'  # Patterns in the format of a '.gitignore' file, separated by pipes.
+#         ignore: 'node_modules'
+>>>>>>> 1c538fffd1afccdaf4364ddc03c23bd7b0b916b7
