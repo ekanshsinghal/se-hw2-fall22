@@ -16,6 +16,7 @@ jobs:
     # Standard drop-in approach that should work for most people.
     - uses: ammaraskar/sphinx-action@master
       with:
+        build-command: "make html"
         docs-folder: "docs/"
     # Great extra actions to compose with:
     # Create an artifact of the html output.
@@ -30,6 +31,6 @@ jobs:
           git config --global user.name "gowtham-sathyan"
           git config --global user.email "gowthamsathyan@gmail.com"
           git add .
-          git commit -m "Updated documentation"
+          git commit -m "Updated documentation" -a || true
           git push
     # ===============================
