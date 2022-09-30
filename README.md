@@ -27,6 +27,11 @@ This project requires:
  
  To install the packages used by this project, run ```pip install -r requirements.txt``` in the command line. Alternatively, you could run ```pip install .``` in the command line. You may need to use pip3 depending on how it has been set up in your system.
  
+
+## Demo Video 
+https://user-images.githubusercontent.com/30636208/193187254-7ed8de42-cda7-42af-934f-4045b585bb16.mp4
+
+
 ## Code Coverage report
 
 ```
