@@ -38,7 +38,7 @@ class Num:
 				pos = randint(1, len(self._has))
 			if pos != -1:
 				self.isSorted = False
-				self._has[pos] = int(v)
+				self._has[pos] = v
 	
 	
 	def per(self, t, p = None):
