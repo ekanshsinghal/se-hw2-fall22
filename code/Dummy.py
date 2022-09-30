@@ -8,3 +8,6 @@ class Dummy:
         
     def dummy_add(self, a, b):
         return a+b
+    
+    def dummy_sub(self, a, b):
+        return a-b
