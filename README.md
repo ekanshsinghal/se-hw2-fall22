@@ -8,7 +8,6 @@
 ![Python](https://img.shields.io/badge/python-v3.8+-yellow.svg)
 [![GitHub Release](https://img.shields.io/github/release/ekanshsinghal/se-hw2-fall22)](https://github.com/ekanshsinghal/se-hw2-fall22/releases/)
 ![GitHub issues](https://img.shields.io/github/issues/ekanshsinghal/se-hw2-fall22)
-![Lines of code](https://img.shields.io/tokei/lines/github/ekanshsinghal/se-hw2-fall22)
 ![Repo Size](https://img.shields.io/github/repo-size/ekanshsinghal/se-hw2-fall22?color=brightgreen)
 [![codecov](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22/branch/main/graph/badge.svg?token=9awZ8cDbJ7&maxAge=10000)](https://codecov.io/gh/ekanshsinghal/se-hw2-fall22)
 
@@ -66,7 +65,7 @@ Invalid field
 !!!!!! FAIL bad True
 
 ------------------------------------------------
-{19 73 79 81 106 124 136 195 197 198 237 241 248 253 259 267 329 369 384 415 438 455 485 544 556 626 674 679 730 781 861 910}
+{8 47 94 117 163 201 238 260 318 319 359 381 386 425 452 559 561 562 595 614 617 634 675 763 771 838 856 863 881 898 908 944}
 !!!!!! PASS bignum True
 
 ------------------------------------------------
@@ -114,9 +113,9 @@ List of available test names :
 !!!!!! PASS num True
 
 ------------------------------------------------
-xmid {:Clndrs 4 :Model 76 :Volume 151 :origin 1.0}
+xmid {:Clndrs 4.0 :Model 76.0 :Volume 151.0 :origin 1.0}
 xdiv {:Clndrs 1.55 :Model 3.88 :Volume 100.78 :origin 1.33}
-ymid {:Acc+ 15 :Lbs- 2807 :Mpg+ 20}
+ymid {:Acc+ 15.5 :Lbs- 2807.0 :Mpg+ 20.0}
 ydiv {:Acc+ 2.713 :Lbs- 886.822 :Mpg+ 7.752}
 !!!!!! PASS stats True
 
